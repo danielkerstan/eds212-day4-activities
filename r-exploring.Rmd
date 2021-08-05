@@ -1,0 +1,42 @@
+---
+title: "R exploring"
+author: "Daniel Kerstan"
+date: "8/5/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+
+## Do some data exploring and summarizing in R
+
+```{r}
+names(diamonds)
+
+dim(diamonds)
+
+summary(diamonds)
+
+head(diamonds)
+
+tail(diamonds)
+
+skimr::skim(diamonds)
+
+GGally::ggpairs(diamonds)
+```
+### ggplot scatterplot
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, y = price)) + geom_point()
+```
+### histogram
+
+```{r}
+ggplot(data = diamonds, aes(x = carat)) + geom_histogram()
+```
+
